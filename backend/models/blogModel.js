@@ -11,7 +11,8 @@ const blogSchema=new mongoose.Schema({
     },
     image:{
         type:String,
-        required:[true,"image is required"]
+        required:[true,"image is required"],
+        default:"https://tse2.mm.bing.net/th?id=OIP.DTEjR2CiMxG6HbWb7C44bAHaFE&pid=Api&P=0&h=180"
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
