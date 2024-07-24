@@ -19,7 +19,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path='/auth' element={<Auth />} />
-          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/' element={<Blogs />} />
           <Route path='/userblogs' element={<UserBlogs />} />
           <Route path='/userblogs/:id' element={<BlogDetails />} />
           <Route path='/addblogs/:id' element={<AddBlogs/>} />

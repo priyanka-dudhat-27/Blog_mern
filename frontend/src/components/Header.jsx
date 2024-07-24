@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../store'; // Adjust the import path as needed
 
 const Header = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
   const navigate=useNavigate()
@@ -29,7 +29,7 @@ const Header = () => {
         {isLoggedIn && (
           <Box display="flex" marginLeft="auto">
             <Tabs textColor="inherit" value={value} onChange={(e, val) => setValue(val)}>
-              <Tab LinkComponent={Link} to="/blogs" label="All Blogs" />
+              <Tab LinkComponent={Link} to="/" label="All Blogs" />
               <Tab LinkComponent={Link} to="/userblogs" label="My Blogs" />
             </Tabs>
           </Box>
