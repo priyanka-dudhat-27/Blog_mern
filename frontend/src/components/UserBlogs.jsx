@@ -28,6 +28,7 @@ const UserBlogs = () => {
           key={index} 
           {...blog} 
           isUser={blog.user._id === userId} 
+          id={blog._id}
         />
       ))}
     </div>
