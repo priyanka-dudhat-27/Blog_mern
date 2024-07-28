@@ -5,14 +5,25 @@ import React from 'react';
 import { Card, CardHeader, CardMedia, Avatar, CardContent, Typography, IconButton, Box } from '@mui/material';
 import { ModeEditOutlined as ModeEditOutlinedIcon, DeleteForever as DeleteForeverIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Blog = ({ title, description, image, user, isUser,id }) => {
   const navigate=useNavigate()
   const handleEdit=()=>{
     navigate(`/blogs/${id}`)
   }
+
+  const deleteRequest=async()=>{
+    const res=await axios.delete(`http://localhost:8001/api/v1/blog/delete/${id}`,{
+      headers:{
+        Authorization:`Bearer ${localStorage.getItem('token')}`
+      }
+    }).catch((err)=>console.log(err))
+    const data=await res.data;
+    return data
+  }
   const handleDelete=()=>{
-    // Implement delete blog functionality here
+    deleteRequest().then((data)=>console.log(data))
   }
   return (
     <Card 

@@ -39,6 +39,11 @@ const AddBlogs = () => {
     e.preventDefault();
     console.log(inputs);
     sendRequest().then((data)=>console.log(data))
+    setInputs({
+      title: "",
+      description: "",
+      image: ""
+    })
   };
 
   return (
