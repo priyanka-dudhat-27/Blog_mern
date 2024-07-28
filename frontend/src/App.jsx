@@ -21,7 +21,7 @@ const App = () => {
           <Route path='/auth' element={<Auth />} />
           <Route path='/' element={<Blogs />} />
           <Route path='/userblogs' element={<UserBlogs />} />
-          <Route path='/userblogs/:id' element={<BlogDetails />} />
+          <Route path='/blogs/:id' element={<BlogDetails />} />
           <Route path='/addblogs' element={<AddBlogs/>} />
         </Routes>
       </main>

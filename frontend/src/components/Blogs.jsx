@@ -14,13 +14,14 @@ const Blogs = () => {
   }
 
   useEffect(()=>{
+    const userId = localStorage.getItem('userId');
     sendRequest().then((data)=>setBlogs(data.blogData))
   },[])
 
   return (
     <div>
       {blogs && blogs.map((blog, index) => (
-        <Blog key={index} {...blog} />
+        <Blog  key={index} id={blog.id} {...blog} />
       ))}
     </div>
   )
